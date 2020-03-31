@@ -69,7 +69,7 @@
      * set its popup to the popup variable you created earlier,
      * and add it to the map.
      */
-     var marker = new mapboxgl.Marker()
+     var marker = new mapboxgl.Marker({})
        .setPopUp(popup)
        .setLngLat([-122.4700, 37.8011])
        .addTo(map);
