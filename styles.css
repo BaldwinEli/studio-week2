@@ -32,3 +32,12 @@ li a:hover {
 .active {
  background-color: #a09f9f;
 }
+
+d {
+ display: block;
+ color: black;
+ text-align: left;
+ padding: 1px 1px;
+ text-decoration: none;
+}
+  
