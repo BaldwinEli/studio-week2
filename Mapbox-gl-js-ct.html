@@ -49,7 +49,7 @@
     * See the Mapbox GL JS API reference for more info: https://docs.mapbox.com/mapbox-gl-js/api/
     */
     var map = new mapboxgl.Map({
-    container: 'mapId',
+    container: "mapId",
     style: 'mapbox://styles/mapbox/light-v10',
     center: [-122.467, 37.798],
     zoom: 13
@@ -59,9 +59,20 @@
      * and set its HTML content to:
      * "<b>The Presidio.</b><br /> Explore to find a drinking fountain!"
      */
-    var popup = new mapboxgl.Popup({offset: 300px})
-      .setHTML("<b>The Presidio.</b><br /> Explore to find a drinking fountain!");
-      
+    var popupOffsets = {
+   'top': [0, 0],
+   'top-left': [0,0],
+   'top-right': [0,0],
+   'bottom': [0, -markerHeight],
+   'bottom-left': [linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+   'bottom-right': [-linearOffset, (markerHeight - markerRadius + linearOffset) * -1],
+   'left': [markerRadius, (markerHeight - markerRadius) * -1],
+   'right': [-markerRadius, (markerHeight - markerRadius) * -1]
+   };
+    var popup = new mapboxgl.Popup({offset: popupOffsets, className: "my-class"})
+      .setHTML("<b>The Presidio.</b><br /> Explore to find a drinking fountain!")
+      .setMaxWidth("300px")
+      .addTo(map);
 
     /* Create a variable called "marker,"
      * add to it a new Marker (ref: https://docs.mapbox.com/mapbox-gl-js/api/#marker),
