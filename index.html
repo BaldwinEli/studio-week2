@@ -11,7 +11,10 @@
   <style type="text/css">
     /* Add a CSS rule that selects an element with the ID "mapId" and gives it a height of 600 pixels */
      #mapId {
-       height: 600px;
+       height: 500px;
+     }
+     #mapId2 {
+       height: 500px;
      }
   </style>
   <!-- Adding styling info for page layout by reading in a CSS file -->
@@ -32,10 +35,12 @@
 
   <!-- Add a div with id="mapId" to give the map somewhere to go -->
    <div id="mapId"></div>
+   <div id="mapId2"></div>
 
   <script>
     // Create a variable called "map" to house your Leaflet map and all of its functionality
     var map = L.map("mapId").setView([37.754700, -122.420790], 14);
+    var map2 = L.map("mapId2").setView([37.754700, -122.420790], 14);
     /*
      * Use Leaflet's tileLayer method to create a new tile layer, then add it to the map
      ** Reference: https://leafletjs.com/reference-1.6.0.html#tilelayer
@@ -48,7 +53,7 @@
      */
     L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg', {
       attribution: '<a id="home-link" target="_top" href="../">Map tiles</a> by <a target="_top" href="http://stamen.com">Stamen Design</a>, under <a target="_top" href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a target="_top" href="http://openstreetmap.org">OpenStreetMap</a>, under <a target="_top" href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
-    }).addTo(map);
+    }).addTo(map2);
     
   </script>
 </body>
